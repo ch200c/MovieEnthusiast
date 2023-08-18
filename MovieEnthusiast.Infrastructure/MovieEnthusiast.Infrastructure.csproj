@@ -5,7 +5,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
+	
+  <PropertyGroup>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <WarningLevel>9999</WarningLevel>
+    <AnalysisLevel>preview</AnalysisLevel>
+  </PropertyGroup>
+	
   <ItemGroup>
     <ProjectReference Include="..\MovieEnthusiast.Application\MovieEnthusiast.Application.csproj" />
   </ItemGroup>
