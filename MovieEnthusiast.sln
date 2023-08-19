@@ -5,15 +5,19 @@ VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieEnthusiast.Api", "MovieEnthusiast.Api\MovieEnthusiast.Api.csproj", "{9BD71E4A-8905-438A-86FA-46A620F11B78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieEnthusiast.Domain", "MovieEnthusiast.Domain\MovieEnthusiast.Domain.csproj", "{0D0C3C20-2017-4022-A06E-4DA0D4567E23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieEnthusiast.Domain", "MovieEnthusiast.Domain\MovieEnthusiast.Domain.csproj", "{0D0C3C20-2017-4022-A06E-4DA0D4567E23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieEnthusiast.Application", "MovieEnthusiast.Application\MovieEnthusiast.Application.csproj", "{2CD8996F-208E-4F39-B87F-BD3A313795AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieEnthusiast.Application", "MovieEnthusiast.Application\MovieEnthusiast.Application.csproj", "{2CD8996F-208E-4F39-B87F-BD3A313795AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieEnthusiast.Infrastructure", "MovieEnthusiast.Infrastructure\MovieEnthusiast.Infrastructure.csproj", "{81CF090E-22B4-41DE-A4C2-273A1D3F6ED3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieEnthusiast.Infrastructure", "MovieEnthusiast.Infrastructure\MovieEnthusiast.Infrastructure.csproj", "{81CF090E-22B4-41DE-A4C2-273A1D3F6ED3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{22DFB643-7FCA-4A64-8080-D145EC6EF290}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{677185DE-BA96-443F-9D6B-3854FF0B95CC}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C3853EC9-6E98-4A63-A366-E913C0B4D7E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieEnthusiast.DatabaseMigrationRunner", "MovieEnthusiast.DatabaseMigrationRunner\MovieEnthusiast.DatabaseMigrationRunner.csproj", "{F632F085-3A2D-40FD-AD6E-B6F7EE94C657}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +41,14 @@ Global
 		{81CF090E-22B4-41DE-A4C2-273A1D3F6ED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81CF090E-22B4-41DE-A4C2-273A1D3F6ED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81CF090E-22B4-41DE-A4C2-273A1D3F6ED3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3853EC9-6E98-4A63-A366-E913C0B4D7E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3853EC9-6E98-4A63-A366-E913C0B4D7E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3853EC9-6E98-4A63-A366-E913C0B4D7E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3853EC9-6E98-4A63-A366-E913C0B4D7E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F632F085-3A2D-40FD-AD6E-B6F7EE94C657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F632F085-3A2D-40FD-AD6E-B6F7EE94C657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F632F085-3A2D-40FD-AD6E-B6F7EE94C657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F632F085-3A2D-40FD-AD6E-B6F7EE94C657}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +58,7 @@ Global
 		{0D0C3C20-2017-4022-A06E-4DA0D4567E23} = {22DFB643-7FCA-4A64-8080-D145EC6EF290}
 		{2CD8996F-208E-4F39-B87F-BD3A313795AF} = {22DFB643-7FCA-4A64-8080-D145EC6EF290}
 		{81CF090E-22B4-41DE-A4C2-273A1D3F6ED3} = {22DFB643-7FCA-4A64-8080-D145EC6EF290}
+		{F632F085-3A2D-40FD-AD6E-B6F7EE94C657} = {22DFB643-7FCA-4A64-8080-D145EC6EF290}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A7C5F780-E982-45A9-86A4-F4F897FE2DE4}

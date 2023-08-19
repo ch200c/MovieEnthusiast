@@ -1,0 +1,31 @@
+version: '3.4'
+
+services:
+  db:
+    image: postgres:15.4
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+
+  adminer:
+    image: adminer:4.8.1
+    restart: always
+    ports:
+      - 8080:8080 
+
+  movieenthusiast.databasemigrationrunner:
+    image: ${DOCKER_REGISTRY-}movieenthusiastdatabasemigrationrunner
+    build:
+      context: .
+      dockerfile: MovieEnthusiast.DatabaseMigrationRunner/Dockerfile
+    depends_on: 
+      - db
+
+  movieenthusiast.api:
+    image: ${DOCKER_REGISTRY-}movieenthusiastapi
+    build:
+      context: .
+      dockerfile: MovieEnthusiast.Api/Dockerfile
+    depends_on: 
+      - db
+      - movieenthusiast.databasemigrationrunner
