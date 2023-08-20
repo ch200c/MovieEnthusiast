@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -11,6 +11,10 @@
     <WarningLevel>9999</WarningLevel>
     <AnalysisLevel>preview</AnalysisLevel>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.1.1" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MovieEnthusiast.Domain\MovieEnthusiast.Domain.csproj" />
