@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{677185DE
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C3853EC9-6E98-4A63-A366-E913C0B4D7E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieEnthusiast.DatabaseMigrationRunner", "MovieEnthusiast.DatabaseMigrationRunner\MovieEnthusiast.DatabaseMigrationRunner.csproj", "{F632F085-3A2D-40FD-AD6E-B6F7EE94C657}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieEnthusiast.DatabaseMigrationRunner", "MovieEnthusiast.DatabaseMigrationRunner\MovieEnthusiast.DatabaseMigrationRunner.csproj", "{F632F085-3A2D-40FD-AD6E-B6F7EE94C657}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
