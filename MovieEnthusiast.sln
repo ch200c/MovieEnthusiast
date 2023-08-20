@@ -19,8 +19,6 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieEnthusiast.DatabaseMigrationRunner", "MovieEnthusiast.DatabaseMigrationRunner\MovieEnthusiast.DatabaseMigrationRunner.csproj", "{F632F085-3A2D-40FD-AD6E-B6F7EE94C657}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieEnthusiast.DummyTests", "MovieEnthusiast.DummyTests\MovieEnthusiast.DummyTests.csproj", "{EF558725-0F41-47BB-BA0E-DAA5A3DC7766}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,10 +49,6 @@ Global
 		{F632F085-3A2D-40FD-AD6E-B6F7EE94C657}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F632F085-3A2D-40FD-AD6E-B6F7EE94C657}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F632F085-3A2D-40FD-AD6E-B6F7EE94C657}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EF558725-0F41-47BB-BA0E-DAA5A3DC7766}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF558725-0F41-47BB-BA0E-DAA5A3DC7766}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF558725-0F41-47BB-BA0E-DAA5A3DC7766}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF558725-0F41-47BB-BA0E-DAA5A3DC7766}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,7 +60,6 @@ Global
 		{81CF090E-22B4-41DE-A4C2-273A1D3F6ED3} = {22DFB643-7FCA-4A64-8080-D145EC6EF290}
 		{C3853EC9-6E98-4A63-A366-E913C0B4D7E9} = {22DFB643-7FCA-4A64-8080-D145EC6EF290}
 		{F632F085-3A2D-40FD-AD6E-B6F7EE94C657} = {22DFB643-7FCA-4A64-8080-D145EC6EF290}
-		{EF558725-0F41-47BB-BA0E-DAA5A3DC7766} = {677185DE-BA96-443F-9D6B-3854FF0B95CC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A7C5F780-E982-45A9-86A4-F4F897FE2DE4}
