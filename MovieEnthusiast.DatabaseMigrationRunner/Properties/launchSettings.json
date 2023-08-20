@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MovieEnthusiast.DatabaseMigrationRunner": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
