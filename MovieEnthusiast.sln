@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{22DFB643-7FC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{677185DE-BA96-443F-9D6B-3854FF0B95CC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieEnthusiast.Application.UnitTests", "Application.UnitTests\MovieEnthusiast.Application.UnitTests.csproj", "{7E38C347-E4F1-44C7-BE76-F862917223B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieEnthusiast.Application.UnitTests", "MovieEnthusiast.Application.UnitTests\MovieEnthusiast.Application.UnitTests.csproj", "{7E38C347-E4F1-44C7-BE76-F862917223B6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieEnthusiast.Infrastructure.UnitTests", "MovieEnthusiast.Infrastructure.UnitTests\MovieEnthusiast.Infrastructure.UnitTests.csproj", "{C21419F8-4671-4D7E-AEB0-D232395EF639}"
 EndProject
