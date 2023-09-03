@@ -1,29 +1,45 @@
-﻿using MovieEnthusiast.Application.Common.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using MovieEnthusiast.Application.Common.Interfaces;
+using MovieEnthusiast.Application.Common.Models;
 using MovieEnthusiast.Domain.Entities;
 
 namespace MovieEnthusiast.Infrastructure.Persistence.Repositories;
 
 public class MovieRepository : IMovieRepository
 {
-    public async Task<IEnumerable<Movie>> GetMovies()
+    private readonly ApplicationDbContext _context;
+
+    public MovieRepository(ApplicationDbContext context)
     {
-        await Task.Run(() =>
-        {
-        });
+        _context = context;
+    }
 
-        var movie = new Movie()
+    public async Task<PaginatedEntity<Movie>> GetMovies(
+        Pagination pagination,
+        CancellationToken cancellationToken)
+    {
+        var position = (pagination.PageNumber - 1) * pagination.PageSize;
+
+        var movies = await _context.Movies
+            .OrderBy(movie => movie.Id)
+            .Skip(position)
+            .Take(pagination.PageSize)
+            .ToListAsync(cancellationToken);
+
+        int? totalItemCount = null;
+        if (pagination.ReturnTotalCount)
         {
-            Id = 1,
-            Title = "Shrek 2",
-            ReleasedOn = DateTime.Now
+            totalItemCount = await _context.Movies
+            .CountAsync(cancellationToken);
+        }
+
+        var paginatedResult = new PaginatedEntity<Movie>
+        {
+            Items = movies,
+            TotalItemCount = totalItemCount
         };
 
-        List<Movie> movies = new()
-        {
-            movie
-        };
-
-        return movies;
+        return paginatedResult;
     }
 }
 

@@ -6,15 +6,15 @@ public class PaginatedList<T>
 
     public int PageNumber { get; }
 
-    public int TotalPages { get; }
+    public int? TotalPages { get; }
 
-    public int TotalCount { get; }
+    public int? TotalCount { get; }
 
-    public PaginatedList(IReadOnlyCollection<T> items, int count, int pageSize)
+    public PaginatedList(IReadOnlyCollection<T> items, int pageNumber, int pageSize, int? totalCount)
     {
-        PageNumber = count;
-        TotalPages = (int)Math.Ceiling(count / (double)pageSize);
         Items = items;
+        PageNumber = pageNumber;
+        TotalPages = totalCount != null ? (int)Math.Ceiling(totalCount.Value / (double)pageSize) : null;
+        TotalCount = totalCount;
     }
-
 }

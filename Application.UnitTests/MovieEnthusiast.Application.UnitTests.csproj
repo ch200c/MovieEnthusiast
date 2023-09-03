@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MovieEnthusiast.Application\MovieEnthusiast.Application.csproj" />
+    <ProjectReference Include="..\MovieEnthusiast.Infrastructure\MovieEnthusiast.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

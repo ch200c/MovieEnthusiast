@@ -1,7 +1,9 @@
-using AutoMapper;
-using MovieEnthusiast.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using MovieEnthusiast.Application.Common.Interfaces;
+using MovieEnthusiast.Application.Movies.Queries;
+using MovieEnthusiast.Infrastructure.Mapping;
 using MovieEnthusiast.Infrastructure.Persistence;
+using MovieEnthusiast.Infrastructure.Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,13 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Sql")));
 
+builder.Services.AddMediatR(
+    c => c.RegisterServicesFromAssembly(typeof(GetMoviesQuery).Assembly));
+
+builder.Services.AddTransient<IMovieRepository, MovieRepository>();
+
+builder.Services.AddAutoMapper(typeof(MovieProfile).Assembly);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -23,8 +32,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 app.UseHttpsRedirection();
 
