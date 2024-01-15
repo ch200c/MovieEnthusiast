@@ -9,7 +9,7 @@ public class MovieRepository(ApplicationDbContext context) : IMovieRepository
 {
     private readonly ApplicationDbContext _context = context;
 
-    public async Task<IList<Movie>> GetMovies(CancellationToken cancellationToken)
+    public async Task<IEnumerable<Movie>> GetMovies(CancellationToken cancellationToken)
     {
         var movies = await _context.Movies.ToListAsync(cancellationToken);
 

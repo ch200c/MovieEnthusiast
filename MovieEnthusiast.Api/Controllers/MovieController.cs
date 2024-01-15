@@ -9,6 +9,7 @@ public class MovieController(IMediator mediator) : ApiControllerBase
 {
     private readonly IMediator _mediator = mediator;
 
+    [Route("api/movies")]
     [HttpGet]
     [ProducesResponseType<IEnumerable<MovieDto>>(StatusCodes.Status200OK)]
     public async Task<IActionResult> GetMovies(CancellationToken cancellationToken)

@@ -23,4 +23,11 @@
   <ItemGroup>
     <ProjectReference Include="..\MovieEnthusiast.Application\MovieEnthusiast.Application.csproj" />
   </ItemGroup>
+
+	<PropertyGroup>
+		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+		<WarningLevel>9999</WarningLevel>
+		<AnalysisLevel>preview</AnalysisLevel>
+	</PropertyGroup>
+	
 </Project>

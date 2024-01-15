@@ -1,4 +1,4 @@
-﻿namespace MovieEnthusiast.Domain.Entities;
+﻿namespace MovieEnthusiast.Application.Common.Models;
 
 public class Paginated<T>
 {

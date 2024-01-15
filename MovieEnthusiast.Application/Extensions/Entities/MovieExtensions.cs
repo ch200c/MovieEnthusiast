@@ -5,7 +5,7 @@ namespace MovieEnthusiast.Application.Extensions.Entities;
 
 public static class MovieExtensions
 {
-    public static IEnumerable<MovieDto> ToApplication(this IList<Movie> movies)
+    public static IEnumerable<MovieDto> ToApplication(this IEnumerable<Movie> movies)
     {
         return movies.Select(x => new MovieDto(x.Id, x.Title));
     }

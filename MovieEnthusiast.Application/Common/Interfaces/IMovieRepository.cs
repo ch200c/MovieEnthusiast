@@ -4,5 +4,5 @@ namespace MovieEnthusiast.Application.Common.Interfaces;
 
 public interface IMovieRepository
 {
-    Task<IList<Movie>> GetMovies(CancellationToken cancellationToken);
+    Task<IEnumerable<Movie>> GetMovies(CancellationToken cancellationToken);
 }
