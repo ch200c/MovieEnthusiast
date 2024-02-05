@@ -1,9 +1,17 @@
 using Microsoft.EntityFrameworkCore;
+using MovieEnthusiast.Application.Common.Interfaces;
+using MovieEnthusiast.Application.Queries;
 using MovieEnthusiast.Infrastructure.Persistence;
+using MovieEnthusiast.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddMediatR(
+    c => c.RegisterServicesFromAssembly(typeof(GetMoviesQuery).Assembly));
+
+builder.Services.AddTransient<IMovieRepository, MovieRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
