@@ -8,16 +8,17 @@ using NUnit.Framework;
 
 namespace MovieEnthusiast.Application.Tests.Queries;
 
+[TestFixture]
 public class GetMoviesQueryHandlerTests
 {
-    private IMovieRepository _movieRepositoryMock;
+    private IGenericRepository<Movie> _movieRepositoryMock;
     private Fixture _fixture;
     private GetMoviesQueryHandler _sut;
 
     [SetUp]
     public void SetUp()
     {
-        _movieRepositoryMock = Substitute.For<IMovieRepository>();
+        _movieRepositoryMock = Substitute.For<IGenericRepository<Movie>>();
         _sut = new GetMoviesQueryHandler(_movieRepositoryMock);
         _fixture = new Fixture();
     }
@@ -28,10 +29,10 @@ public class GetMoviesQueryHandlerTests
         // Arrange
         var query = _fixture.Create<GetMoviesQuery>();
         var existingMovies = _fixture.CreateMany<Movie>(10).ToList();
-        _movieRepositoryMock.GetMovies(Arg.Any<CancellationToken>()).Returns(existingMovies);
+        _movieRepositoryMock!.GetAll(Arg.Any<CancellationToken>()).Returns(existingMovies);
 
         // Act
-        var result = await _sut.Handle(query, CancellationToken.None);
+        var result = await _sut!.Handle(query, CancellationToken.None);
 
         // Assert
         result.Count().Should().Be(existingMovies.Count);
@@ -43,7 +44,7 @@ public class GetMoviesQueryHandlerTests
         // Arrange
         var query = _fixture.Create<GetMoviesQuery>();
         var existingMovies = _fixture.CreateMany<Movie>(1).ToList();
-        _movieRepositoryMock.GetMovies(Arg.Any<CancellationToken>()).Returns(existingMovies);
+        _movieRepositoryMock.GetAll(Arg.Any<CancellationToken>()).Returns(existingMovies);
 
         // Act
         var result = (await _sut.Handle(query, CancellationToken.None)).First();

@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddMediatR(
     c => c.RegisterServicesFromAssembly(typeof(GetMoviesQuery).Assembly));
 
-builder.Services.AddTransient<IMovieRepository, MovieRepository>();
+builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

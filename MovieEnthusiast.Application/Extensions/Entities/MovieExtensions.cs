@@ -9,4 +9,13 @@ public static class MovieExtensions
     {
         return movies.Select(x => new MovieDto(x.Id, x.Title));
     }
+
+    public static Movie ToDomain(this MovieDto movie)
+    {
+        return new()
+        {
+            Id = movie.Id,
+            Title = movie.Title
+        };
+    }
 }

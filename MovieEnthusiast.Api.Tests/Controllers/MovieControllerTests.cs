@@ -3,6 +3,7 @@ using FluentAssertions;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using MovieEnthusiast.Api.Controllers;
+using MovieEnthusiast.Application.Commands;
 using MovieEnthusiast.Application.Common.Models;
 using MovieEnthusiast.Application.Queries;
 using NSubstitute;
@@ -10,6 +11,7 @@ using NUnit.Framework;
 
 namespace MovieEnthusiast.Api.Tests.Controllers;
 
+[TestFixture]
 public class MovieControllerTests
 {
     private IMediator _mediatorMock;
@@ -37,5 +39,25 @@ public class MovieControllerTests
 
         // Assert
         result.Should().BeAssignableTo<OkObjectResult>();
+    }
+
+    [Test]
+    public async Task Valid_AddMovie_ReturnOkResult()
+    {
+        // Arrange
+        var movie = new MovieDto(null, "Shrek");
+        const int TestId = 12;
+        
+        _mediatorMock.Send(Arg.Is<AddMovieCommand>(x => x.movie.Id == movie.Id && x.movie.Title == movie.Title))
+            .Returns(TestId);
+
+        // Act
+        var result = await _sut.AddMovie(movie, CancellationToken.None);
+
+        // Assert
+        result.Should().BeAssignableTo<OkObjectResult>();
+        var okResult = result as OkObjectResult;
+        var id = (int?)okResult!.Value;
+        id.Should().Be(TestId);
     }
 }
