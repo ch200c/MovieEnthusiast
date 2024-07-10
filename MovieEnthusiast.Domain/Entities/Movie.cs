@@ -1,8 +1,8 @@
-﻿namespace MovieEnthusiast.Domain.Entities;
+﻿using MovieEnthusiast.Domain.Data;
 
-public class Movie
+namespace MovieEnthusiast.Domain.Entities;
+
+public class Movie : Entity
 {
-    public int Id { get; set; }
-
     public required string Title { get; set; }
 }
